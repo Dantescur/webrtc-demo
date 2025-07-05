@@ -21,7 +21,7 @@
           <el-icon class="mr-2">
             <QuestionFilled />
           </el-icon>
-          Comenzar Tour Educativo
+          Mosstrar detalles
         </el-button>
       </div>
     </div>
