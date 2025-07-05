@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+@media (max-width: 640px) {
+  .flex-col .el-button + .el-button {
+    margin-left: 0 !important;
+  }
+}
+
+.sdp-textarea.copied {
+  border-color: #67c23a !important;
+  transition: border-color 0.3s;
+}
