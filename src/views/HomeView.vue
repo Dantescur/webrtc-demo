@@ -1,6 +1,6 @@
 <template>
   <div class="animate-fade-in">
-    <!-- Header Section -->
+    <!-- Seccion de Header -->
     <div class="text-center mb-16 pt-8">
       <h1
         class="text-5xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
@@ -82,7 +82,7 @@
       </el-col>
     </el-row>
 
-    <!-- Educational Features Section -->
+    <!-- Seccion educativa -->
     <div class="max-w-4xl mx-auto mt-20 mb-16">
       <h2 class="text-3xl font-bold text-center mb-12 text-gray-100">
         Recursos Educativos
@@ -108,7 +108,7 @@
       </div>
     </div>
 
-    <!-- Help Dialog - Now Educational Guide -->
+    <!-- Guia instructiva -->
     <el-dialog
       v-model="showHelpDialog"
       title="Guía Educativa de WebRTC"
@@ -170,7 +170,7 @@
       </template>
     </el-dialog>
 
-    <!-- Feature Explanation Dialog -->
+    <!-- Dialogo de explicacion -->
     <el-dialog
       v-model="showFeatureDialog"
       :title="currentFeatureTitle"

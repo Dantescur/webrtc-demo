@@ -1,6 +1,6 @@
 <template>
   <div class="p-2 md:p-0">
-    <!-- Local SDP Display -->
+    <!-- Mostrar SDP local -->
     <div id="sdp-offer" class="mb-4 md:mb-6">
       <el-text class="text-gray-300 mb-1 md:mb-2 block text-sm md:text-base">
         {{ localSdpLabel }}
@@ -31,7 +31,7 @@
       </el-text>
     </div>
 
-    <!-- Remote SDP Input -->
+    <!-- Entrada de SDP remoto -->
     <div id="sdp-answer" class="mb-4 md:mb-6">
       <el-text class="text-gray-300 mb-1 md:mb-2 block text-sm md:text-base">
         {{ remoteSdpLabel }}
@@ -61,7 +61,7 @@
       </el-input>
     </div>
 
-    <!-- Action Buttons -->
+    <!-- Botones de accion -->
     <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
       <el-button
         type="default"
@@ -86,7 +86,7 @@
       </el-button>
     </div>
 
-    <!-- Notification -->
+    <!-- Notificaciones -->
     <el-dialog
       v-model="showNotification"
       :title="notificationTitle"
@@ -134,7 +134,7 @@ const notificationMessage = ref("");
 
 const isViewerRoute = computed(() => route.path.includes("/live"));
 
-// Route-based content
+// Contenido basado en ruta
 const localSdpLabel = computed(() =>
   isViewerRoute.value ? "Tu respuesta SDP:" : "Tu oferta SDP:",
 );
@@ -204,7 +204,7 @@ const submitSdp = () => {
 const remoteSdpType = computed(() => {
   try {
     const parsed = JSON.parse(remoteSdp.value);
-    return parsed?.sdp?.type; // usually 'offer' or 'answer'
+    return parsed?.sdp?.type;
   } catch {
     return null;
   }

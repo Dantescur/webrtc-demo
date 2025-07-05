@@ -8,7 +8,7 @@
     :close-on-click-modal="false"
     center
   >
-    <!-- Step content -->
+    <!-- Contenido del step -->
     <transition name="fade" mode="out-in">
       <div :key="activeStep" class="step-content p-4">
         <h2 ref="activeTitle" class="text-xl font-bold text-white mb-2">

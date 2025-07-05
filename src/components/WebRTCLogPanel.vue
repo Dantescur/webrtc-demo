@@ -246,7 +246,7 @@ const scrollToTop = () => {
   if (logContainer.value) {
     logContainer.value.scrollTo({
       top: 0,
-      behavior: "smooth", // Suavizar el desplazamiento
+      behavior: "smooth",
     });
     userScrolledDown.value = false;
   }
@@ -256,7 +256,7 @@ const handleScroll = () => {
   if (!logContainer.value) return;
 
   const { scrollTop } = logContainer.value;
-  const isAtTop = scrollTop < 5; // Tolerancia de 5px para la parte superior
+  const isAtTop = scrollTop < 5;
 
   userScrolledDown.value = !isAtTop;
 

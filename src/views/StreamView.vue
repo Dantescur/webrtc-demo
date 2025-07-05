@@ -7,7 +7,7 @@
     :error="error"
     :success="success"
   >
-    <!-- Controls Slot -->
+    <!-- Slot de Controles -->
     <template #controls>
       <el-button
         id="start-btn"
@@ -38,7 +38,7 @@
       </el-button>
     </template>
 
-    <!-- Status Tag Slot -->
+    <!-- Slot de tag de estado -->
     <template #statusTag>
       <Transition name="fade" mode="out-in">
         <el-tag
@@ -62,7 +62,7 @@
       </Transition>
     </template>
 
-    <!-- Video Content Slot -->
+    <!-- Slot de contenido de video -->
     <template #videoContent>
       <Transition name="fade" mode="out-in">
         <div :key="isStreaming ? 'video' : 'placeholder'">
@@ -87,7 +87,7 @@
       </Transition>
     </template>
 
-    <!-- Connection Content Slot -->
+    <!-- Slot de contenido de conexion -->
     <template #connectionContent>
       <sdp-exchange
         id="sdp-section"

@@ -1,6 +1,6 @@
 <template>
   <div class="animate-fade-in">
-    <!-- Alerts -->
+    <!-- Alertas -->
     <div class="fixed top-4 left-0 right-0 z-50 max-w-4xl mx-auto px-4">
       <transition name="el-zoom-in-top">
         <el-alert
@@ -26,7 +26,7 @@
       </transition>
     </div>
 
-    <!-- Header Section -->
+    <!-- seccion de Header -->
     <div class="text-center mb-4 md:mb-8 pt-8 md:pt-16 px-4">
       <h1
         class="text-2xl md:text-4xl font-extrabold tracking-tight mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
@@ -59,9 +59,9 @@
       <slot name="controls"></slot>
     </div>
 
-    <!-- Main Content -->
+    <!-- Contenido principal -->
     <el-row :gutter="24" class="mb-8 px-4">
-      <!-- Video Column -->
+      <!-- Columna de Video -->
       <el-col :span="24" :md="12" class="mb-6">
         <el-card
           shadow="hover"
@@ -90,7 +90,7 @@
         </el-card>
       </el-col>
 
-      <!-- Connection Column -->
+      <!-- Columna de conexion -->
       <el-col :span="24" :md="12" class="mb-6">
         <el-card
           shadow="hover"
@@ -115,7 +115,7 @@
       </el-col>
     </el-row>
 
-    <!-- Help Dialog -->
+    <!-- Dialogo de ayuda -->
     <WebRTCTutorial
       v-model="showHelpDialog"
       :title="helpDialogTitle"
