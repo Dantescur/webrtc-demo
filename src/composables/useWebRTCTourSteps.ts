@@ -110,6 +110,13 @@ pc.close()`)}
           <p>Haz clic aquí para acceder a una explicación más detallada</p>
         `,
       },
+      {
+        target: "#log-stream",
+        title: "8. Ver logs detallados del proceso",
+        description: `
+<p>Aqui podras ver logs detallados de todo el proceso interno mientras se ejecuta la app en tiempo real.</p>
+`,
+      },
     ]);
   }
 
@@ -156,6 +163,13 @@ answerSdp.value = JSON.stringify({ sdp: answer, candidate })`)}
       description: `
           <p>Haz clic aquí para acceder a una explicación más detallada</p>
       `,
+    },
+    {
+      target: "#log-live",
+      title: "8. Ver logs detallados del proceso",
+      description: `
+<p>Aqui podras ver logs detallados de todo el proceso interno mientras se ejecuta la app en tiempo real.</p>
+`,
     },
   ]);
 }

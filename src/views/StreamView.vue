@@ -110,7 +110,7 @@
       </template>
     </el-tour-step>
   </el-tour>
-  <WebRTCLogPanel />
+  <WebRTCLogPanel id="log-stream" />
 </template>
 
 <script setup lang="ts">

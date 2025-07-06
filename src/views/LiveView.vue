@@ -77,7 +77,7 @@
       </template>
     </el-tour-step>
   </el-tour>
-  <WebRTCLogPanel />
+  <WebRTCLogPanel id="log-live" />
 </template>
 
 <script lang="ts" setup>
