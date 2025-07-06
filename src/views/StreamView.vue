@@ -64,27 +64,25 @@
 
     <!-- Slot de contenido de video -->
     <template #videoContent>
-      <Transition name="fade" mode="out-in">
-        <div :key="isStreaming ? 'video' : 'placeholder'">
-          <video
-            v-if="isStreaming"
-            ref="localVideo"
-            autoplay
-            muted
-            playsinline
-            class="w-full h-full object-contain"
-          />
-          <div
-            v-else
-            class="absolute inset-0 flex flex-col items-center justify-center text-gray-400"
-          >
-            <el-icon :size="48" class="mb-2">
-              <Monitor />
-            </el-icon>
-            <p class="text-base">Vista previa no disponible</p>
-          </div>
+      <div :key="isStreaming ? 'video' : 'placeholder'">
+        <video
+          v-if="isStreaming"
+          ref="localVideo"
+          autoplay
+          muted
+          playsinline
+          class="w-full h-full object-contain"
+        />
+        <div
+          v-else
+          class="absolute inset-0 flex flex-col items-center justify-center text-gray-400"
+        >
+          <el-icon :size="48" class="mb-2">
+            <Monitor />
+          </el-icon>
+          <p class="text-base">Vista previa no disponible</p>
         </div>
-      </Transition>
+      </div>
     </template>
 
     <!-- Slot de contenido de conexion -->
@@ -116,7 +114,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from "vue";
+import { nextTick, onMounted, ref, watch } from "vue";
 import WebRTCLogPanel from "@/components/WebRTCLogPanel.vue";
 import {
   VideoCamera,
@@ -171,14 +169,15 @@ const startStreaming = async () => {
       })),
     });
 
-    if (localVideo.value) {
-      localVideo.value.srcObject = stream.value;
-      debug("Vista previa configurada");
-    }
-
     isStreaming.value = true;
     showAlert("success", "¡Transmisión iniciada correctamente!");
     info("Transmisión iniciada");
+
+    if (!localVideo.value) {
+      warn(
+        "Elemento <video> aún no está disponible al iniciar stream. Esperando vía watcher...",
+      );
+    }
 
     debug("Configurando RTCPeerConnection...");
     pc.value = new RTCPeerConnection(iceServers);
@@ -354,6 +353,22 @@ watch(offerSdp, (newVal) => {
       length: newVal.length,
       preview: newVal.substring(0, 50) + "...",
     });
+  }
+});
+
+watch(isStreaming, async (newVal) => {
+  if (newVal) {
+    await nextTick();
+
+    if (localVideo.value) {
+      localVideo.value.srcObject = stream.value;
+      await localVideo.value.play().catch((e) => {
+        console.error("Error al iniciar reproducción del video local:", e);
+      });
+      debug("Vista previa configurada desde watch");
+    } else {
+      warn("Elemento de video no disponible tras nextTick()");
+    }
   }
 });
 
