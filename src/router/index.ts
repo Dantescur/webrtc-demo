@@ -19,6 +19,11 @@ const router = createRouter({
       name: "stream",
       component: () => import("../views/StreamView.vue"),
     },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "not-found",
+      component: () => import("../views/NotFoundView.vue"),
+    },
   ],
 });
 

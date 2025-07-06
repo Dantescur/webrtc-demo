@@ -107,7 +107,7 @@ pc.close()`)}
         target: "#help-btn",
         title: "7. Acceder al centro de ayuda",
         description: `
-          <p>Haz clic aquí para acceder a una explicación más larga (diálogo expandido).</p>
+          <p>Haz clic aquí para acceder a una explicación más detallada</p>
         `,
       },
     ]);
@@ -154,7 +154,7 @@ answerSdp.value = JSON.stringify({ sdp: answer, candidate })`)}
       target: "#help-btn",
       title: "4. Ayuda y documentación",
       description: `
-        <p>Accede nuevamente a este recorrido o consulta más recursos en el <strong>Centro de ayuda WebRTC</strong>.</p>
+          <p>Haz clic aquí para acceder a una explicación más detallada</p>
       `,
     },
   ]);
