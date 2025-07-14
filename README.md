@@ -1,18 +1,22 @@
-# webrtc-demo
+# WebRTC Educational Demo
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is an interactive educational demo designed to teach the fundamental concepts of WebRTC in a hands-on way. Users can explore the roles of both a "streamer" and a "viewer" to understand the entire peer-to-peer connection process.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Interactive Tours:** Guided tours for both the streamer and viewer roles, explaining each step of the WebRTC connection process with code snippets.
+- **Streamer Mode:** Share your screen and generate a WebRTC offer (SDP) to send to a viewer.
+- **Viewer Mode:** Paste a received SDP offer to establish a connection and view the remote stream.
+- **Educational Content:** The application provides explanations of core WebRTC concepts like P2P connections, security, and the roles of STUN/TURN servers.
+- **Real-time Logging:** A log panel displays internal WebRTC events as they happen, providing insight into the connection process.
 
-## Type Support for `.vue` Imports in TS
+## Tech Stack
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Vue 3:** A progressive JavaScript framework for building user interfaces.
+- **Vite:** A fast build tool and development server for modern web projects.
+- **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+- **Element Plus:** A Vue 3 based component library for building beautiful UIs.
+- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
 
 ## Project Setup
 
